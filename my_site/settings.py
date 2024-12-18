@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'main',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main', 
 ]
 
 MIDDLEWARE = [
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # Указываем, что используем MySQL/MariaDB
+        'NAME': 'user_system',               # Название вашей базы данных
+        'USER': 'root',                        # Имя пользователя MariaDB
+        'PASSWORD': 'EricGlnjyan237881',           # Ваш пароль (если он есть)
+        'HOST': 'localhost',                   # Хост, обычно это localhost
+        'PORT': '3306',                        # Порт по умолчанию
     }
 }
 
@@ -122,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # стандартный механизм аутентификации
+)
+
+AUTHENTICATED_USER_EMAIL_FIELD = 'email'

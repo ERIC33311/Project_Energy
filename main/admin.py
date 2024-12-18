@@ -1,3 +1,7 @@
-from django.contrib import admin
+# main/admin.py
 
-# Register your models here.
+from django.contrib import admin
+from .models import CustomUser
+
+# Зарегистрируйте CustomUser в админке
+admin.site.register(CustomUser)

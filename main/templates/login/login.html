@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | VerduraX</title>
+    <link rel='icon' href='../../static/horoscope/img/загруженное.png'>
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'horoscope/css/login.css' %}">
+    <script src='{% static 'horoscope/js/all.js' %}'></script>
+</head>
+<body>
+    <div class='container'>
+        <nav class="navbar">
+            <a href='/'>VerduraX</a>
+        </nav>
+        <div class='reg'>
+            <div class='RorE'>
+                <div class='R'><a href='/registration'>Регистрация</a></div>
+                <hr>
+                <div class='E'><a href='/login'>Вход</a></div>
+            </div>
+            <div class='REG'>
+                <h2>Вход</h2>
+                <label for="inp" class="inp">
+                    <input type="text" id="inp" placeholder="&nbsp;">
+                    <span class="label">Email  или телефон *</span>
+                    <span class="focus-bg"></span>
+                </label>
+                <label for="inp" class="inp d">
+                    <input type="password" id="inp d" placeholder="&nbsp;">
+                    <span class="label">Введите пароль</span>
+                    <span class="focus-bg"></span>
+                </label>
+                <button href="#">Войти</button>
+            </div>
+        </div>
+    </div>
+</body>
