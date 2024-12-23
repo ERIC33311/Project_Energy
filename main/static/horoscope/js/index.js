@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Открытие/закрытие FAQ
     document.querySelectorAll(".faq_all").forEach((faq) => {
         faq.addEventListener("click", (event) => {
             event.stopPropagation(); // Предотвращаем всплытие события, чтобы не закрыть при клике на сам элемент
@@ -36,34 +37,32 @@ document.addEventListener("DOMContentLoaded", () => {
             activeFaq.classList.remove("active");
         });
     });
-});
 
-
-document.addEventListener("DOMContentLoaded", function() {
     // Функция для проверки, авторизован ли пользователь
     function checkAuthentication() {
-        // Здесь можно проверить состояние авторизации, например, наличие токена в localStorage
         const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-        if (isAuthenticated) {
-            // Скрываем ссылки Вход и Регистрация, показываем Мой аккаунт
-            document.getElementById("login-link").style.display = "none";
-            document.getElementById("register-link").style.display = "none";
-            document.getElementById("account-link").style.display = "inline";
-        } else {
-            // Ссылки Вход и Регистрация показываются, Мой аккаунт скрыт
-            document.getElementById("login-link").style.display = "inline";
-            document.getElementById("register-link").style.display = "inline";
-            document.getElementById("account-link").style.display = "none";
+        // Убедитесь, что элементы существуют, прежде чем обращаться к ним
+        const loginLink = document.getElementById("login-link");
+        const registerLink = document.getElementById("register-link");
+        const accountLink = document.getElementById("account-link");
+
+        if (loginLink && registerLink && accountLink) {
+            if (isAuthenticated) {
+                loginLink.style.display = "none";
+                registerLink.style.display = "none";
+                accountLink.style.display = "inline";
+            } else {
+                loginLink.style.display = "inline";
+                registerLink.style.display = "inline";
+                accountLink.style.display = "none";
+            }
         }
     }
 
     // Функция, которая вызывается после успешной регистрации
     function onRegistrationSuccess() {
-        // Здесь мы сохраняем информацию о том, что пользователь авторизован
         localStorage.setItem("isAuthenticated", true);
-
-        // Перенаправляем пользователя на главную страницу
         window.location.href = "index.html";
     }
 

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'my_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'main' / 'templates'],
+        'DIRS': [BASE_DIR / 'main' / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,15 +76,22 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # Указываем, что используем MySQL/MariaDB
-        'NAME': 'user_system',               # Название вашей базы данных
-        'USER': 'root',                        # Имя пользователя MariaDB
-        'PASSWORD': 'EricGlnjyan237881',           # Ваш пароль (если он есть)
-        'HOST': 'localhost',                   # Хост, обычно это localhost
-        'PORT': '3306',                        # Порт по умолчанию
-    }
+        'ENGINE': 'django.db.backends.mysql',  # или 'django.db.backends.mariadb'
+        'NAME': 'news',  # Название базы данных
+        'USER': 'root',  # Имя пользователя базы данных
+        'PASSWORD': 'EricGlnjyan237881',  # Пароль
+        'HOST': 'localhost',  # Если база данных на том же сервере, это будет localhost
+        'PORT': '3306',  # Порт для MySQL/MariaDB
+    },
+    'news': {
+        'ENGINE': 'django.db.backends.mysql',  # Use MySQL backend (works for MariaDB)
+        'NAME': 'news',  # Replace with your news database name
+        'USER': 'root',  # Replace with your news database user
+        'PASSWORD': 'EricGlnjyan237881',  # Replace with your news database password
+        'HOST': 'localhost',  # Database host (localhost if running locally)
+        'PORT': '3306',  # Default MariaDB port (adjust if needed)
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -108,8 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -127,8 +132,21 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',  # стандартный механизм аутентификации
-)
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+    },
+}
 
-AUTHENTICATED_USER_EMAIL_FIELD = 'email'
+LANGUAGE_CODE = 'ru-ru'

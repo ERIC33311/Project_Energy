@@ -153,6 +153,7 @@ header .header_h img {
 }
 
 header .header_h .about_h {
+    display: none;
     border-radius: 30px;
     border: 0px solid #FFF;
     background: #FFF;
@@ -726,11 +727,73 @@ header .header_h .about_h p {
 
 .footer .bottom_footer .photos {
     position: relative;
-    left: 636px;
+    left: 1040px;
     display: flex;
     gap: 28px;
     width: 442px;
     height: 37px;
     flex-shrink: 0;
     top: 5px;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #1e90ff, #10789b, #2a649e);
+    background-size: 200%;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    display: none;
+    transition: transform 0.3s ease, background-position 1.5s ease;
+    animation: gradientAnimation 3s infinite;
+    z-index: 9999;
+  }
+  
+  #scrollToTopBtn:hover {
+    transform: scale(1.2);
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .navbar a:hover:not(a:nth-child(1)) {
+    text-decoration: underline;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Анимация появления шапки */
+header {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

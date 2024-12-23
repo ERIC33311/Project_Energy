@@ -1,7 +1,9 @@
-# main/admin.py
+from django.contrib import admin
+from .models import Solution 
+
+admin.site.register(Solution)
 
 from django.contrib import admin
-from .models import CustomUser
+from .models import News
 
-# Зарегистрируйте CustomUser в админке
-admin.site.register(CustomUser)
+admin.site.register(News)
