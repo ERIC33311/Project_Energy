@@ -1,21 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Сначала выполняем код для новостей
     const allNews = document.querySelectorAll('.News');
     const loadMoreButton = document.querySelector('.all');
-    let currentIndex = 6; // Сколько новостей сейчас видно
+    let currentIndex = 6; 
 
     // Если новостей меньше 6, то сразу отображаем все
     if (allNews.length <= 6) {
         currentIndex = allNews.length;
-        loadMoreButton.style.display = 'none'; // Скрыть кнопку, если новостей меньше 6
+        loadMoreButton.style.display = 'none'; // Скрыть кнопку, если новостей меньше 6!!
     }
-
-    // Скрываем все новости, кроме первых 6
-    allNews.forEach((news, index) => {
-        if (index >= currentIndex) {
-            news.style.display = 'none';
-        }
-    });
 
     // Показать ещё 3 новости при клике на кнопку
     loadMoreButton.addEventListener('click', () => {
