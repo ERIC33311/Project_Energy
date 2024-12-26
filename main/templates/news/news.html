@@ -6,9 +6,9 @@
     <title>Новости | VerduraX</title>
     <link rel='icon' href='../../static/horoscope/img/загруженное.png'>
     {% load static %}
-    <link rel="stylesheet" href=" {% static 'horoscope/css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'horoscope/css/news.css' %}">
     <script src='{% static 'horoscope/js/all.js' %}'></script>
-    <script src='{% static 'horoscope/js/news.js' %}'></script>
+    <script src='{% static 'horoscope/js/news.js' %}' defer></script> 
 </head>
 <body>
     <div class='container'>
@@ -29,7 +29,10 @@
             </header>
             <section class='news'>
                 <hr>
-                <h1>Новости</h1> <button class='sortirovka' id='sortButton'><img src='../../static/horoscope/img/sort.png' alt='Сортировка' class='sortir'/></button>
+                <h1>Новости</h1> 
+                <button class='sortirovka' id='sortButton'>
+                    <img src='../../static/horoscope/img/sort.png' alt='Сортировка' class='sortir'/>
+                </button>
                 <!-- Модальное окно -->
                 <div id="sortModal" class="modal">
                     <div class="modal-content">
@@ -53,7 +56,7 @@
                         </div>
                     {% endfor %}
                 </div>
-                <button class="all pulse">Показать ещё</button>
+                <button class="all pulse" id="loadMoreButton">Показать ещё</button> <!-- Кнопка для загрузки дополнительных новостей -->
             </section>
         </div>
         <footer class="footer">
@@ -76,8 +79,8 @@
                     <a href='#'>support@verdurax.com</a>
                 </div>
                 <div class='orenq'>
-                    <p>Пожалуйста, ознакомьтесь с нашими 
-                        <a href='#'>Условиями использования</a> и
+                    <p>Пожалуйста, ознакомьтесь с нашими
+<a href='#'>Условиями использования</a> и
                         <a href='#'>Политикой конфиденциальности</a></p>
                 </div>
                 <div class='leng'>

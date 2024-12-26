@@ -1,37 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const allNews = document.querySelectorAll('.News');
-    const loadMoreButton = document.querySelector('.all');
-    let currentIndex = 6; 
+    const allNews = document.querySelectorAll('.News');  // Получаем все новости
+    const loadMoreButton = document.querySelector('.all');  // Получаем кнопку "Показать ещё"
+    let currentIndex = 6;  // Индекс, до которого будут показываться новости
 
-    // Если новостей меньше 6, то сразу отображаем все
-    if (allNews.length <= 6) {
-        currentIndex = allNews.length;
-        loadMoreButton.style.display = 'none'; // Скрыть кнопку, если новостей меньше 6!!
-    }
-
-    // Показать ещё 3 новости при клике на кнопку
-    loadMoreButton.addEventListener('click', () => {
-        const nextIndex = currentIndex + 3;
-        allNews.forEach((news, index) => {
-            if (index >= currentIndex && index < nextIndex) {
-                news.style.display = 'block';
-            }
-        });
-
-        currentIndex = nextIndex;
-        // Скрываем кнопку, если больше нечего показывать
-        if (currentIndex >= allNews.length) {
-            loadMoreButton.style.display = 'none';
+    // Скрываем новости, которые превышают 6
+    allNews.forEach((news, index) => {
+        if (index >= currentIndex) {
+            news.style.display = 'none';  // Скрываем новости, начиная с 7-й
         }
     });
 
-    // Теперь добавляем обработчики для сортировки
+    // Если новостей меньше или равно 6, сразу скрываем кнопку
+    if (allNews.length <= 6) {
+        currentIndex = allNews.length;  // Обновляем currentIndex, если новостей меньше 6
+        if (loadMoreButton) {
+            loadMoreButton.style.display = 'none';  // Скрываем кнопку "Показать ещё"
+        }
+    }
+
+    // Если кнопка существует, добавляем обработчик на клик
+    if (loadMoreButton) {
+        loadMoreButton.addEventListener('click', () => {
+            const nextIndex = currentIndex + 3;  // Загружаем 3 новости за раз
+
+            // Показываем новости от текущего индекса до nextIndex
+            allNews.forEach((news, index) => {
+                if (index >= currentIndex && index < nextIndex) {
+                    news.style.display = 'block';  // Отображаем новости
+                }
+            });
+
+            currentIndex = nextIndex;  // Обновляем currentIndex
+
+            // Если все новости показаны, скрываем кнопку
+            if (currentIndex >= allNews.length) {
+                loadMoreButton.style.display = 'none';  // Скрываем кнопку "Показать ещё"
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+
+    // Добавляем обработчики для сортировки
     document.getElementById("sort-date-asc")?.addEventListener("click", () => sortData('date', 'asc'));
     document.getElementById("sort-date-desc")?.addEventListener("click", () => sortData('date', 'desc'));
     document.getElementById("sort-title-asc")?.addEventListener("click", () => sortData('title', 'asc'));
     document.getElementById("sort-title-desc")?.addEventListener("click", () => sortData('title', 'desc'));
 
-    // Модальное окно
+    // Модальное окно для сортировки
     var modal = document.getElementById("sortModal");
     var btn = document.getElementById("sortButton");
     var span = document.getElementsByClassName("close")[0];
