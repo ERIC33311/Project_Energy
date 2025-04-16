@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | VerduraX</title>
+    <link rel='icon' href='../../static/horoscope/img/загруженное.png'>
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'horoscope/css/index.css' %}">
+    <script src='{% static 'horoscope/js/index.js' %}'></script>
+    <script src='{% static 'horoscope/js/all.js' %}'></script>
+</head>
+<body>
+    <d class='container'>
+        <!-- Шапка с навигатором -->
+        <header>
+            <nav class="navbar">
+                <a href='/'>VerduraX</a>
+                <a href="/about">О нас</a>
+                <a href="/solutions">Решения</a>
+                <a href="/news">Новости</a>
+                <a href="/contacts">Контакты</a>
+            </nav>
+            <div class='header_h'>
+                <h1>Давайте вместе строить чистую 
+                    энергию для будущих поколений</h1>
+                <img src='../../static/horoscope/img/img1.png' alt='Энергии' class='img_header'/>
+                <a class='about_h' href='about' type='button'><p>О нас</p></a> 
+            </div>
+        </header>
+
+        <!-- Раздел Новости -->
+        <section class="news">
+            <hr class='n1'>
+            <h2 class='NEWS'>Новости</h2>
+            <div class='news_all'>
+                <div class='news_n1'>
+                    <div class='news1'>
+                        <div class='month'><h5>28 Сен</h5></div> <h3>Форум "Российская энергетическая неделя" в Москве</h3>
+                        <p class='news_more'>Участники представили проекты, направленные на повышение эффективности использования возобновляемых источников энергии. Презентованы новые инициативы и проекты</p>
+                    </div>
+                    <div class='news1'>
+                        <div class='month'><h5>15 Ноя</h5></div> <h3>Китай — лидер в развитии возобновляемой энергетики</h3>
+                        <p class='news_more'>К 2030 году на Китай придется 60% глобального роста мощностей в этой сфере. Это стало возможным благодаря государственной поддержке, экономичным технологиям и низким затратам на финансирование</p>
+                    </div>
+                </div>
+                <div class='circle n1'></div>
+                <div class='circle n2'></div>
+                <div class='news_n2'>
+                    <div class='news1'>
+                        <div class='month'><h5>10 Окт</h5></div> <h3>Мировые инвестиции в зеленую энергетику — рекорда</h3>
+                        <p class='news_more'> В 2024 году расходы на возобновляемую энергетику впервые превысили затраты на ископаемое топливо, достигнув $2 трлн. Это важный шаг к глобальному энергопереходу</p>
+                    </div>
+                    <div class='news1'>
+                        <div class='month'><h5>10 Ноя</h5></div> <h3>В России запущена новая солнечная электростанция</h3>
+                        <p class='news_more'> Запуск Аршанской солнечной электростанции мощностью 37,6 МВт в Калмыкии знаменует собой очередной успех России в развитии возобновляемых источников энергии</p>
+                    </div>
+                </div>
+                <a class='all_n' href='/news'><p>Посмотреть все новости &#8594;</p></a>
+            </div>
+            <hr class='n2'>
+        </section>
+
+        <!-- Раздел Наша команда -->
+        <section class="team">
+            <h2 class='TEAM'>Наша команда</h2>
+            <div class='team_all'>
+                <div class='team1 n1'>
+                    <img src='../../static/horoscope/img/img2.jpg'>
+                    <h3>Дмитрий Сергеевич</h3>
+                    <h5>Технический директор</h5>
+                    <p>Эксперт в области возобновляемой 
+                        энергетики с более чем 15-летним опытом.
+                        Спокойный, дружелюбный. Следит
+                        за  техническим состоянием проектов.</p>
+                </div>
+                <div class='team1 n2'>
+                    <img src='../../static/horoscope/img/img5.jpg'>
+                    <h3>Марк Витальевич</h3>
+                    <h5>Директор компании(CEO)</h5>
+                    <p>Опытный лидер с более чем 20-летним 
+                        стажем в управлении крупными
+                        проектами в области возобновляемой 
+                        энергетики. Дружелюбный. </p>
+                </div>
+                <div class='team1 n3'>
+                    <img src='../../static/horoscope/img/img7.jpg'>
+                    <h3>Анна Викторовна</h3>
+                    <h5>Финансовый директор</h5>
+                    <p>Специалист по финансовому планированию 
+                        и управлению рисками. Она отвечает за
+                        стратегию финансирования проектов
+                        компании.</p>
+                </div>
+            </div>
+            <div class='team_other'>
+                <p>Также с нами работает множество квалифицированных специалистов в области технологий, устойчивого развития и управления проектами, которые делают нашу компанию лидером в отрасли</p>
+            </div>
+            <hr>
+        </section>
+
+        <!-- Раздел Вопросы (FAQ) -->
+        <section class="faq">
+            <h2 class='FAQ'>FAQ</h2>
+            <div class='faq_all'>
+                <div class='question'>
+                    <h5 class='h5 h51'>Как  VerduraX получил своё название?</h5>
+
+                    <svg width='15' height='10' viewBox='0 0 42 25'>
+                        <path d='M3 3L21 21L39 3' stroke='white' stroke-width='7' stroke-linecap='round'/>
+                    </svg>
+
+                </div>
+                <div class='answer'>
+                    <p>VerduraX получила свое название от латинского слова "verdura", что означает "зелень" или "свежесть". Оно 
+                        символизирует приверженность компании экологичности и поддержке возобновляемых источников энергии. Буква 
+                        "X" в названии добавлена для обозначения инновационного подхода и расширения возможностей в устойчивом 
+                        развитии.</p>
+                </div>
+            </div>
+            <div class='faq_all'>
+                <div class='question'>
+                    <h5 class='h5 h51'>Для чего нужен VerduraX?</h5>
+
+                    <svg width='15' height='10' viewBox='0 0 42 25'>
+                        <path d='M3 3L21 21L39 3' stroke='white' stroke-width='7' stroke-linecap='round'/>
+                    </svg>
+
+                </div>
+                <div class='answer'>
+                    <p>VerduraX — это платформа, созданная для поддержки возобновляемых источников энергии и решения экологических проблем.<br><br>
+
+                        Она предоставляет доступ к актуальным новостям, исследованиям и образовательным материалам, чтобы пользователи могли лучше понять важность перехода на экологически чистую энергию. VerduraX помогает находить и поддерживать проекты, направленные на развитие зелёных технологий, борьбу с изменением климата и сохранение природных ресурсов.<br><br>
+                        
+                        Кроме того, платформа объединяет людей, компании и организации, заинтересованных в создании устойчивого будущего, предоставляя им возможности для взаимодействия и обмена идеями.</p>
+                </div>
+            </div>
+            <div class='faq_all'>
+                <div class='question'>
+                    <h5 class='h5 h51'>Где работает VerduraX?</h5>
+
+                    <svg width='15' height='10' viewBox='0 0 42 25'>
+                        <path d='M3 3L21 21L39 3' stroke='white' stroke-width='7' stroke-linecap='round'/>
+                    </svg>
+
+                </div>
+                <div class='answer'>
+                    <p>VerduraX — это глобальная онлайн-платформа, направленная на распространение новостей, поддержку инициатив и продвижение проектов, связанных с возобновляемыми источниками энергии. Мы стремимся объединить людей, организации и компании, которые работают над решением экологических проблем и переходом к устойчивому будущему.<br><br>
+
+                        Главный офис VerduraX расположен в Москве, где работает команда разработчиков, аналитиков и экологических экспертов. Именно здесь разрабатываются стратегии по улучшению функционала платформы, формируется контент, и осуществляется поддержка пользователей. Благодаря этому, VerduraX поддерживает как локальные, так и международные проекты, помогая сделать экологически чистую энергию доступной для всех.</p>
+                </div>
+            </div>
+            <div class='faq_all'>
+                <div class='question'>
+                    <h5 class='h5 h51'>Что делает VerduraX?</h5>
+
+                    <svg width='15' height='10' viewBox='0 0 42 25'>
+                        <path d='M3 3L21 21L39 3' stroke='white' stroke-width='7' stroke-linecap='round'/>
+                    </svg>
+
+                </div>
+                <div class='answer'>
+                    <p>VerduraX — это платформа, посвящённая возобновляемым источникам энергии. Она предоставляет пользователям доступ к актуальным новостям и информации в этой области, а также помогает поддерживать проекты, направленные на решение экологических проблем.<br><br>
+
+                        Пользователи могут не только узнавать последние тенденции в сфере зелёной энергетики, но и участвовать в инициативах, которые способствуют переходу к устойчивому будущему.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <h2 class='VERDURAX'>VerduraX</h2>
+            <hr>
+            <div class='footer_all'>
+                <div class='other'>
+                    <h4>Прочее</h4>
+                    <ul>
+                        <li><a href='/about'>О нас</a></li>
+                        <li><a href='/solutions'>Решения</a></li>
+                        <li><a href='/news'>Новости</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class='support'>
+                    <h4>Поддержка</h4>
+                    <a href='#'>+ 7 (495) 777-33-11</a>
+                    <a href='#'>news@vareduraX.com</a>
+                    <a href='#'>support@verdurax.com</a>
+                </div>
+                <div class='orenq'>
+                    <p>Пожалуйста, ознакомтьтесь с нашими 
+                        <a href='#'>Условиями использования</a> и
+                        <a href='#'>Политикой конфиденциальности</a></p>
+                </div>
+                <div class='leng'>
+                    <h4>Язык/Lenguage</h4>
+                    <ul>
+                        <li><a href='#'>Русский</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class='bottom_footer'>
+                <div class='VERDURAX2'>
+                    <h4>VerduraX</h4>
+                </div>
+                <div class='created'>
+                    <p>© 2024 Сrtated by Eric and David</p>
+                </div>
+                <div class='photos'>
+                    <a href='#'><img src='../../static/horoscope/img/icon2.png' alt=''></a>
+                </div>
+            </div>
+        </footer>
+        <button id="scrollToTopBtn" class="fade-in-up" style="display: none;">↑</button>
+    </div>
+</body>
+</html>
+
